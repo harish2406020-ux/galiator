@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101a20" />
+  <title>Last Light — Island Survival</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}
+  </script>
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="3D island survival game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Last Light home"><span class="brand-mark">L</span><span>LAST LIGHT<small>ISLAND SURVIVAL</small></span></a>
+      <div class="match-card"><span class="live-dot"></span><span>SOLO • SURVIVAL</span><b id="phase">DEPLOYED</b></div>
+      <div class="top-actions"><button id="sound-btn" class="icon-btn" aria-label="Toggle sound">♪</button><button id="pause-btn" class="icon-btn" aria-label="Pause game">Ⅱ</button></div>
+    </header>
+    <section class="mission-panel glass"><div class="eyebrow">MISSION <span>01 / 01</span></div><h1>Outlast the island.</h1><p>Stay inside the safe zone. Be the last one standing.</p><div class="mission-meta"><span>◉ <b id="players-left">13</b> LEFT</span><span>⌖ <b id="eliminations">0</b> ELIMINATIONS</span></div></section>
+    <section class="zone-panel glass"><div class="zone-icon">⌖</div><div><span class="eyebrow">SAFE ZONE</span><strong id="zone-status">ZONE STABLE</strong></div><span class="zone-timer" id="zone-timer">01:20</span></section>
+    <div class="compass" id="compass"><span>W</span><i></i><b>N</b><i></i><span>E</span></div>
+    <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="toast" id="toast">Find cover. Watch the circle.</div>
+    <div class="damage-flash" id="damage-flash"></div>
+    <section class="bottom-hud">
+      <div class="player-card glass"><div class="avatar">LL</div><div class="player-info"><span>FIELD OPERATIVE</span><strong>ROOKIE <small>• LV 01</small></strong><div class="health-track"><i id="health-bar"></i></div></div><span class="health-number" id="health-number">100</span></div>
+      <div class="weapon-card glass"><div class="weapon-icon">⌁</div><div class="weapon-info"><span>ASSAULT RIFLE <b>AR-7</b></span><strong><em id="ammo">30</em><small> / 120</small></strong><div class="weapon-hint">CLICK TO FIRE <i>•</i> R TO RELOAD</div></div><span class="weapon-slot">01</span></div>
+      <div class="status-pill glass"><span class="status-dot"></span><span id="status-text">SIGNAL STRONG</span></div>
+    </section>
+    <div class="mobile-controls" aria-label="Touch controls"><div id="joystick" class="joystick"><div class="stick"></div></div><button id="mobile-fire" class="fire-button">FIRE</button><button id="mobile-run" class="run-button">RUN</button></div>
+    <div id="overlay" class="overlay"><div class="overlay-card glass"><div class="overlay-logo">L</div><p class="eyebrow">A NEW ISLAND. ONE WAY OUT.</p><h2 id="overlay-title">LAST LIGHT</h2><p id="overlay-copy">Drop into a wild island, gear up, and survive the closing zone. Every run is yours to make.</p><div class="control-guide"><span><b>W A S D</b> MOVE</span><span><b>MOUSE</b> AIM</span><span><b>CLICK</b> FIRE</span><span><b>R</b> RELOAD</span><span><b>SHIFT</b> SPRINT</span></div><button id="start-btn" class="start-btn">DEPLOY <span>→</span></button><small class="overlay-note">ORIGINAL BROWSER GAME • NO DOWNLOAD REQUIRED</small></div></div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
